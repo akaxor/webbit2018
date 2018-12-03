@@ -5,6 +5,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var session = require('express-session')
 var bcrypt = require('bcrypt');
+var path = require('path');
 
 // Boilerplate för moduler
 var app = express();
@@ -20,6 +21,7 @@ app.use(session({
     }
    }));
 app.use(cors({origin: 'http://localhost:4200', credentials:true}));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 // Hämtar scheman
 var Category = require('./models/category');
@@ -372,6 +374,6 @@ app.post('/api/logout', function(req, res){
 });
 
 // Öppnar port för uppkoppling till server
-app.listen(8080, () => {
-    console.log("Connected to server on port 8080");
+app.listen(process.env.PORT || 8080, () => {
+    console.log("Connected to server");
 });
