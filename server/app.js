@@ -337,7 +337,7 @@ app.post('/api/login', (req, res) => {
 });
 
 //LOGOUT punkt
-app.post('/api/logout', function(req, res){
+app.get('/api/logout', function(req, res){
         req.session.destroy();
         console.log(req.session);
 });
