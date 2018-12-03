@@ -338,12 +338,7 @@ app.post('/api/login', (req, res) => {
 
 //LOGOUT punkt
 app.post('/api/logout', function(req, res){
-    if(req.session.role){
         req.session.destroy();
-        res.sendStatus(200);
-    }else{
-        res.sendStatus(403);
-    }
 });
 
 // Hänvisar till API-ändpunkter
