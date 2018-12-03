@@ -12,7 +12,7 @@ import{ Post } from './appClasses';
 export class AppService {
 
   // URL för API:t
-  apiUrl = "http://localhost:8080/api";
+  apiUrl = "/api";
 
   category: Category;
 
