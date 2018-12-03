@@ -38,11 +38,7 @@ mongoose.connect(connstr).catch(function(err) {
 
 // Hänvisar till API-ändpunkter
 app.get('/', function(req, res){
-    res.redirect('/api');
-    console.log(req.session);
-});
-app.get('/api', function(req, res){
-    res.send('Följande ändpunkter finns att välja mellan:<br>kommer snart')
+    res.sendFile(path.join(__dirname + '../dist/index.html'));
 });
 
 /***** CREATE *****/

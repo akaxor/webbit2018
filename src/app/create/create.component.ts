@@ -41,7 +41,7 @@ export class CreateComponent implements OnInit {
     this.appService.createPost(payload);
     // Publicerar kommentar och skickar användaren tillbaka till inlägget som kommenterats
     window.location.reload();
-    this.router.navigate(['/category/' + this.category._id]);
+    this.router.navigate(['category/' + this.category._id]);
   }
 
   // "Cancel"-knapp skickar användaren tillbaka till föregående vy
