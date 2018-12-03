@@ -256,7 +256,7 @@ app.delete('/api/category/:id', (req, res) => {
 // Radera inlägg
 app.delete('/api/post/:id', (req, res) => {
     if(req.session.role){
-        Post.findOneAndDelete({ _id: req.params.id, user:req.session.userId}, (err, doc) => {
+        Post.findOneAndDelete({ _id: req.params.id}, (err, doc) => {
             if (err){
                 res.sendStatus(500);
             }

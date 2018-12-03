@@ -85,9 +85,14 @@ export class AppService {
 
   /***** HTTP PUT *****/
   // Uppdaterar inlägg/kommentar
-  updatePost(payload){
+  updatePost(post: Post){
     // Använd paketerad data som skickats med
-    this.http.put(this.apiUrl+"/post/"+ payload._id, payload, {withCredentials: true,responseType: 'text'}).subscribe(response => {});
+    let payload = {
+      "id": post._id,
+      "title": post.title,
+      "content": post.content
+    }
+    this.http.put(this.apiUrl+"/post/"+ post._id, payload, {responseType: 'text'}).subscribe(response => {});
   }
 
   // Uppdaterar kategori

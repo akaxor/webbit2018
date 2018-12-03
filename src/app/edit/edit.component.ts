@@ -30,24 +30,13 @@ export class EditComponent implements OnInit {
 
   // Hämtar data för att uppdatera inlägg/kommentar
   updatePost(_id){
-    let payload = {
-      id: this.post._id,
-      title: this.post.title,
-      content: this.post.content
-    }
-    this.appService.updatePost(payload);
-    // Uppdaterar vy och skickar användaren tillbaka till op-sidan
+    this.appService.updatePost(this.post);
     this.router.navigate(['post/' + _id]);
   }
 
   // Hämtar data för att radera inlägg/kommentar
   deletePost(_id){
-    let payload = {
-      id: this.post._id,
-      title: this.post.title, 
-      content: this.post.content
-    }
-    this.appService.deletePost(payload);
+    this.appService.deletePost(this.post);
     // Skickar användaren automatiskt till startsidan
     this.router.navigate(['/']);
   }
