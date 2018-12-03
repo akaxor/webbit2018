@@ -17,6 +17,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
   logout(){
-    this.router.navigate(['/api/logout']);
+    this.appService.logout();
   }
 }

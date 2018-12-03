@@ -131,4 +131,8 @@ export class AppService {
   login(payload){
     this.http.post(this.apiUrl+"/login",payload, {withCredentials: true, responseType: 'text'}).subscribe(res => {console.log(res);});
   }
+  //LOGOUT
+  logout(){
+    this.http.post(this.apiUrl+"/logout", {withCredentials: true}).subscribe(res => {console.log(res);});
+  }
 }

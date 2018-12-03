@@ -337,15 +337,14 @@ app.post('/api/login', (req, res) => {
 });
 
 //LOGOUT punkt
-app.get('/api/logout', function(req, res){
-        console.log(req.session);
+app.post('/api/logout', function(req, res){
         if(req.session.role){
             req.session.destroy();
-            console.log("SESSION: "+req.session)
             res.sendStatus(200);
         }
         else{
             res.write("Id doesnt work");
+            res.sendStatus(403);
         }
 });
 
