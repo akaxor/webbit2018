@@ -1,4 +1,5 @@
-<button class="blue-centered" routerLink="/login">Login</button>
+<button *ngIf="" class="blue-centered" routerLink="/login">Login</button>
+<button *ngIf="" class="blue-centered" (click)="logout()">Logout</button>
 
 <h1>Webbit</h1>
 <blockquote>The web side of the internet</blockquote>

@@ -201,10 +201,10 @@ app.put('/api/category/:id', (req, res) => {
 });
 
 // Redigera inlägg/kommentar (post)
-app.put('/api/post/:author/:id', (req, res) => {
-    if(req.session.userId === req.params.author || req.session.role =="admin"){
+app.put('/api/post/:id', (req, res) => {
+    if(req.session.role){
         var today = new Date();
-        Post.findOneAndUpdate({ _id: req.params.id }, {$set:{ title: req.body.title, content: req.body.content, editedDate: today }}, {new: true}, (err, doc) => {
+        Post.findOneAndUpdate({  _id: req.params.id, user:req.session.userId }, {$set:{ title: req.body.title, content: req.body.content, editedDate: today }}, {new: true}, (err, doc) => {
             if (err){
                 res.sendStatus(500);
             }
@@ -254,15 +254,15 @@ app.delete('/api/category/:id', (req, res) => {
 });
 
 // Radera inlägg
-app.delete('/api/post/:author/:id', (req, res) => {
-    if(req.session.userId === req.params.author || req.session.role =="admin"){
-        Post.deleteMany({ postId: req.params.id }, (err, doc) => {
-        });
-        Post.findOneAndDelete({ _id: req.params.id }, (err, doc) => {
+app.delete('/api/post/:id', (req, res) => {
+    if(req.session.role){
+        Post.findOneAndDelete({ _id: req.params.id, user:req.session.userId}, (err, doc) => {
             if (err){
                 res.sendStatus(500);
             }
             else{
+                Post.deleteMany({ postId: req.params.id }, (err, doc) => {
+                });
                 res.sendStatus(200);
             }
         });

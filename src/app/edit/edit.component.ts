@@ -33,8 +33,7 @@ export class EditComponent implements OnInit {
     let payload = {
       id: this.post._id,
       title: this.post.title,
-      content: this.post.content,
-      author: this.post.userId
+      content: this.post.content
     }
     this.appService.updatePost(payload);
     // Uppdaterar vy och skickar användaren tillbaka till op-sidan
@@ -47,8 +46,7 @@ export class EditComponent implements OnInit {
     let payload = {
       id: this.post._id,
       title: this.post.title, 
-      content: this.post.content,
-      author: this.post.userId
+      content: this.post.content
     }
     this.appService.deletePost(payload);
     // Skickar användaren automatiskt till startsidan
