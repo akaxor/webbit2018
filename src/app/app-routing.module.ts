@@ -14,7 +14,7 @@ import { SignupComponent } from './signup/signup.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
-  { path: '/', component: HomeComponent }, // startsida + hämtar alla kategorier
+  { path: '', component: HomeComponent }, // startsida + hämtar alla kategorier
   { path: 'login', component: LoginComponent}, // logga in till webbit
   { path: 'signup', component: SignupComponent }, // registrera ny användare
   { path: 'category/:_id', component: CategoryComponent }, // hämtar alla inlägg inom viss kategori
