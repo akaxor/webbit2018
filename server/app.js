@@ -272,20 +272,6 @@ app.delete('/api/post/:id', (req, res) => {
     }
 });
 
-// Radera inlägg
-app.delete('/api/post/:id', (req, res) => { 
-    Post.deleteMany({ postId: req.params.id }, (err, doc) => {
-    });
-    Post.findOneAndDelete({ _id: req.params.id }, (err, doc) => {
-        if (err){
-            res.sendStatus(500);
-        }
-        else{
-            res.sendStatus(200);
-        }
-    });
-});
-
 // Radera användare
 app.delete('/api/user/:id', (req, res) => {
     if(req.session.role=="admin"){
