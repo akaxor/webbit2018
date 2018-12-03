@@ -10,6 +10,6 @@ export class FilterSearchPipe implements PipeTransform {
     if (search === undefined || search == "") return posts;
 
     // Hämtar alla poster som matchar med söksträngen
-    return posts.filter(posts => posts.title.toLowerCase().includes(search.toLowerCase()));
+    return posts.filter(posts => posts.content.toLowerCase().includes(search.toLowerCase()));
   }
 }
