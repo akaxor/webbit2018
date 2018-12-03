@@ -343,7 +343,6 @@ app.post('/api/logout', function(req, res){
             res.sendStatus(200);
         }
         else{
-            res.write("Id doesnt work");
             res.sendStatus(403);
         }
 });
