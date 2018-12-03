@@ -87,7 +87,7 @@ export class AppService {
   // Uppdaterar inlägg/kommentar
   updatePost(payload){
     // Använd paketerad data som skickats med
-    this.http.put(this.apiUrl+"/post/"+payload.author+"/"+ payload._id, payload, {withCredentials: true,responseType: 'text'}).subscribe(response => {});
+    this.http.put(this.apiUrl+"/post/"+ payload._id, payload, {withCredentials: true,responseType: 'text'}).subscribe(response => {});
   }
 
   // Uppdaterar kategori
@@ -114,7 +114,7 @@ export class AppService {
   /***** HTTP DELETE *****/
   // Raderar inlägg/kommentar
   deletePost(payload){
-    this.http.delete(this.apiUrl+"/post/"+payload.author+"/"+ payload._id, {withCredentials: true,responseType: 'text'}).subscribe(response => {});
+    this.http.delete(this.apiUrl+"/post/"+ payload._id, {withCredentials: true,responseType: 'text'}).subscribe(response => {});
   }
 
   // Raderar kategori

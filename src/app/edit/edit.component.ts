@@ -37,7 +37,6 @@ export class EditComponent implements OnInit {
     }
     this.appService.updatePost(payload);
     // Uppdaterar vy och skickar användaren tillbaka till op-sidan
-    window.location.reload();
     this.router.navigate(['post/' + _id]);
   }
 

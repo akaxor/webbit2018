@@ -31,21 +31,18 @@ export class AdminComponent implements OnInit {
       description: this.description
     }
     this.appService.createCategory(payload);
-    alert("The category has been created");
     window.location.reload();
   }
 
   // Hämtar data för att uppdatera kategori
   updateCategory(category){
     this.appService.updateCategory(category);
-    alert("The category has been updated");
     window.location.reload();
   }
 
   // Hämtar ID för att radera kategori
   deleteCategory(category){
     this.appService.deleteCategory(category);
-    alert("The category has been deleted");
     window.location.reload();
   }
 }

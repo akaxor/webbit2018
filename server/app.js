@@ -334,10 +334,6 @@ app.post('/api/login', (req, res) => {
             });
         }
     }
-    else{
-        res.sendStatus(400);
-    }
-    
 });
 
 //LOGOUT punkt

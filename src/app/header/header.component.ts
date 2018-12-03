@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
   logout(){
-    alert("yolo");
     this.router.navigate(['/api/logout']);
   }
 }
