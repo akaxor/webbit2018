@@ -172,14 +172,9 @@ app.get('/api/users', (req, res) => {
 
 // Hämta specifik användare
 app.get('/api/user/:id', (req, res) => {
-    if(req.session.userId === req.params.id){
         User.findOne({_id: req.params.id}, function(err, users) {
             res.json(users);
         });
-    }
-    else{
-
-    }
 });
 
 /****** UPDATE *****/
