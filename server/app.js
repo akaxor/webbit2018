@@ -366,8 +366,8 @@ app.post('/api/logout', function(req, res){
 
 // Hänvisar till API-ändpunkter
 app.get('/*', function(req, res){
-    console.log(path.join(__dirname + '../dist/index.html'));
-    res.sendFile(path.join(__dirname + '../dist/index.html'));
+    console.log(path.join(__dirname, '../dist/index.html'));
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 
