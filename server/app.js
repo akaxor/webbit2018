@@ -36,11 +36,6 @@ mongoose.connect(connstr).catch(function(err) {
     console.log("A database connection error occured: " + err);
 }); 
 
-// Hänvisar till API-ändpunkter
-app.get('*', function(req, res){
-    res.sendFile(path.join(__dirname + '../dist/index.html'));
-});
-
 /***** CREATE *****/
 // Skapa ny kategori
 app.post('/api/category', (req, res) => {
@@ -368,6 +363,12 @@ app.post('/api/logout', function(req, res){
         res.sendStatus(403);
     }
 });
+
+// Hänvisar till API-ändpunkter
+app.get('*', function(req, res){
+    res.sendFile(path.join(__dirname + '../dist/index.html'));
+});
+
 
 // Öppnar port för uppkoppling till server
 app.listen(process.env.PORT || 8080, () => {
