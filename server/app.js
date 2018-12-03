@@ -37,7 +37,7 @@ mongoose.connect(connstr).catch(function(err) {
 }); 
 
 // Hänvisar till API-ändpunkter
-app.get('/', function(req, res){
+app.get('*', function(req, res){
     res.sendFile(path.join(__dirname + '../dist/index.html'));
 });
 
