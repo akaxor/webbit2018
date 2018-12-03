@@ -21,7 +21,7 @@ app.use(session({
     }
    }));
 app.use(cors({origin: 'http://localhost:4200', credentials:true}));
-app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, '../dist/webbit')));
 
 // Hämtar scheman
 var Category = require('./models/category');
