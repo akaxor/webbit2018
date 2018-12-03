@@ -24,8 +24,7 @@ const routes: Routes = [
   { path: 'post/:_id/edit', component: EditComponent }, // redigera inlägg/kommentar
   { path: 'user/:_id', component: UserComponent }, // hämtar användarprofil
   { path: 'search', component: SearchComponent }, // visar sökresultat
-  { path: 'admin', component: AdminComponent }, // visar sökresultat
-  { path: '**', redirectTo: '/' } // om route i addressfältet inte stämmer med någon ovan, skicka till startsidan
+  { path: 'admin', component: AdminComponent } // visar sökresultat
 ];
 
 @NgModule({
